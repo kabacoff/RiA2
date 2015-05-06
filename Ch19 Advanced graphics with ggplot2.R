@@ -88,6 +88,7 @@ ggplot(Salaries, aes(x=rank)) + geom_bar(fill="red")
 
 ggplot(Salaries, aes(x=rank, fill="red")) + geom_bar()
 
+
 # Faceting
 data(singer, package="lattice")
 library(ggplot2)
@@ -105,6 +106,7 @@ ggplot(data=singer, aes(x=height, fill=voice.part)) +
   geom_density() +
   facet_grid(voice.part~.)
 
+
 # Adding smoothed lines
 data(Salaries, package="car")
 library(ggplot2)
@@ -116,6 +118,7 @@ ggplot(data=Salaries, aes(x=yrs.since.phd, y=salary,
   geom_smooth(method=lm, formula=y~poly(x,2),
               se=FALSE, size=1) +
   geom_point(size=2)
+
 
 # Modifying axes
 data(Salaries,package="car")
@@ -129,6 +132,7 @@ ggplot(data=Salaries, aes(x=rank, y=salary, fill=sex)) +
   scale_y_continuous(breaks=c(50000, 100000, 150000, 200000),
                      labels=c("$50K", "$100K", "$150K", "$200K")) +
   labs(title="Faculty Salary by Rank and Sex", x="", y="")
+
 
 # Legends
 data(Salaries,package="car")
