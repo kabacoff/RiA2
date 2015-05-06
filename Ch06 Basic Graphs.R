@@ -14,7 +14,6 @@ counts
 
 
 # Listing 6.1 - Simple bar plot
-
 # vertical barplot
 barplot(counts, 
         main="Simple Bar Plot",
@@ -115,7 +114,6 @@ fan.plot(slices, labels = lbls, main="Fan Plot")
 
 
 # Listing 6.6 - Histograms
-
 # simple histogram                                                        1
 hist(mtcars$mpg)
 
@@ -161,7 +159,6 @@ rug(mtcars$mpg, col="brown")
 
 
 # Listing 6.8 - Comparing kernel density plots
-
 par(lwd=2)                                                       
 library(sm)
 attach(mtcars)
@@ -200,7 +197,6 @@ boxplot(mpg~cyl,data=mtcars,
 
 
 # Listing 6.9 - Box plots for two crossed factors
-
 # create a factor for number of cylinders
 mtcars$cyl.f <- factor(mtcars$cyl,
                        levels=c(4,6,8),
@@ -239,7 +235,6 @@ dotchart(mtcars$mpg,labels=row.names(mtcars),cex=.7,
 
 
 # Listing 6.11 - Dot plot grouped, sorted, and colored
-
 x <- mtcars[order(mtcars$mpg),]                      
 x$cyl <- factor(x$cyl)                                 
 x$color[x$cyl==4] <- "red"                              
