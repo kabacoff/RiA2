@@ -16,7 +16,6 @@ You will also find that packages may be loaded more than once in
 a file. For example, in the chapter 6 code file, the statement
     "library(vcd)" 
 is repeated several times. It is actually only needed once. 
-
 However, placing it in several places allows you run a portion
 of the file's code without having to run all the code from the beginning. 
     
