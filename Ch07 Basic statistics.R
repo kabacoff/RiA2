@@ -101,6 +101,8 @@ prop.table(mytable) # cell proportions
 prop.table(mytable, 1) # row proportions
 prop.table(mytable, 2) # column proportions
 addmargins(mytable) # add row and column sums to table
+
+# more complex tables
 addmargins(prop.table(mytable))
 addmargins(prop.table(mytable, 1), 2)
 addmargins(prop.table(mytable, 2), 1)
