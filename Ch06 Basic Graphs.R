@@ -66,8 +66,8 @@ counts <- table(Arthritis$Improved) # get the data for the bars
 
 # produce the graph
 barplot(counts, 
-     main="Treatment Outcome", horiz=TRUE, cex.names=0.8,
-  names.arg=c("No Improvement", "Some Improvement", "Marked Improvement")
+        main="Treatment Outcome", horiz=TRUE, cex.names=0.8,
+        names.arg=c("No Improvement", "Some Improvement", "Marked Improvement")
 )
 par(opar)
 
@@ -92,16 +92,16 @@ pct <- round(slices/sum(slices)*100)
 lbls <- paste(lbls, pct) 
 lbls <- paste(lbls,"%",sep="")
 pie(slices,labels = lbls, col=rainbow(length(lbls)),
-   main="Pie Chart with Percentages")
+    main="Pie Chart with Percentages")
 
 library(plotrix)                                               
 pie3D(slices, labels=lbls,explode=0.1,
-   main="3D Pie Chart ")
+      main="3D Pie Chart ")
 
 mytable <- table(state.region)                                   
 lbls <- paste(names(mytable), "\n", mytable, sep="")
 pie(mytable, labels = lbls, 
-   main="Pie Chart from a dataframe\n (with sample sizes)")
+    main="Pie Chart from a dataframe\n (with sample sizes)")
 
 par(opar)
 
@@ -119,21 +119,21 @@ hist(mtcars$mpg)
 
 # colored histogram with specified number of bins        
 hist(mtcars$mpg, 
-   breaks=12, 
-   col="red", 
-   xlab="Miles Per Gallon", 
-   main="Colored histogram with 12 bins")
-    
+     breaks=12, 
+     col="red", 
+     xlab="Miles Per Gallon", 
+     main="Colored histogram with 12 bins")
+
 # colored histogram with rug plot, frame, and specified number of bins 
 hist(mtcars$mpg, 
-  freq=FALSE, 
-  breaks=12, 
-  col="red", 
-  xlab="Miles Per Gallon", 
-  main="Histogram, rug plot, density curve")  
+     freq=FALSE, 
+     breaks=12, 
+     col="red", 
+     xlab="Miles Per Gallon", 
+     main="Histogram, rug plot, density curve")  
 rug(jitter(mtcars$mpg)) 
 lines(density(mtcars$mpg), col="blue", lwd=2)
-   
+
 # histogram with superimposed normal curve (Thanks to Peter Dalgaard)  
 x <- mtcars$mpg 
 h<-hist(x, 
@@ -201,7 +201,7 @@ boxplot(mpg~cyl,data=mtcars,
 mtcars$cyl.f <- factor(mtcars$cyl,
                        levels=c(4,6,8),
                        labels=c("4","6","8"))
-                       
+
 # create a factor for transmission type
 mtcars$am.f <- factor(mtcars$am, 
                       levels=c(0,1), 
@@ -241,12 +241,12 @@ x$color[x$cyl==4] <- "red"
 x$color[x$cyl==6] <- "blue"
 x$color[x$cyl==8] <- "darkgreen" 
 dotchart(x$mpg,
-        labels = row.names(x),                               
-        cex=.7, 
-        pch=19,                                              
-        groups = x$cyl,                                       
-        gcolor = "black",
-        color = x$color,
-        main = "Gas Mileage for Car Models\ngrouped by cylinder",
-        xlab = "Miles Per Gallon")
+         labels = row.names(x),                               
+         cex=.7, 
+         pch=19,                                              
+         groups = x$cyl,                                       
+         gcolor = "black",
+         color = x$color,
+         main = "Gas Mileage for Car Models\ngrouped by cylinder",
+         xlab = "Miles Per Gallon")
 
