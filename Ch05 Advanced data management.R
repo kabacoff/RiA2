@@ -6,8 +6,6 @@
 # install.packages("reshape2")      #
 #-----------------------------------#
 
-# --Section 5.1--
-
 # Class Roster Dataset
 Student <- c("John Davis","Angela Williams","Bullwinkle Moose",
              "David Jones","Janice Markhammer",
@@ -19,7 +17,6 @@ english <- c(25, 22, 18, 15, 20, 28, 15, 30, 27, 18)
 roster <- data.frame(Student, math, science, english, 
                      stringsAsFactors=FALSE)
 
-# --Section 5.2--
 
 # Listing 5.1 - Calculating the mean and standard deviation
 x <- c(1, 2, 3, 4, 5, 6, 7, 8)
@@ -32,6 +29,7 @@ sdx <- sqrt(css / (n-1))
 meanx
 sdx
 
+
 # Listing 5.2 - Generating pseudo-random numbers from 
 # a uniform distribution
 runif(5)
@@ -40,6 +38,7 @@ set.seed(1234)
 runif(5)
 set.seed(1234)                                                      
 runif(5)
+
 
 # Listing 5.3 - Generating data from a multivariate
 # normal distribution
@@ -55,6 +54,7 @@ names(mydata) <- c("y", "x1", "x2")
 dim(mydata)                                                             
 head(mydata, n=10)   
 
+
 # Listing 5.4 - Applying functions to data objects
 a <- 5
 sqrt(a)
@@ -65,6 +65,7 @@ c
 log(c)
 mean(c)
 
+
 #  Listing 5.5 - Applying a function to the rows (columns) of a matrix
 mydata <- matrix(rnorm(30), nrow=6)
 mydata
@@ -72,7 +73,6 @@ apply(mydata, 1, mean)
 apply(mydata, 2, mean) 
 apply(mydata, 2, mean, trim=.4)   
 
-# --Section 5.3--
 
 # Listing 5.6 - A solution to the learning example
 options(digits=2)
@@ -83,25 +83,29 @@ Student <- c("John Davis", "Angela Williams", "Bullwinkle Moose",
 Math <- c(502, 600, 412, 358, 495, 512, 410, 625, 573, 522)
 Science <- c(95, 99, 80, 82, 75, 85, 80, 95, 89, 86)
 English <- c(25, 22, 18, 15, 20, 28, 15, 30, 27, 18)
+
 roster <- data.frame(Student, Math, Science, English,
                      stringsAsFactors=FALSE)
+
 z <- scale(roster[,2:4])
 score <- apply(z, 1, mean)
 roster <- cbind(roster, score)
+
 y <- quantile(score, c(.8,.6,.4,.2))
 roster$grade[score >= y[1]] <- "A"
 roster$grade[score < y[1] & score >= y[2]] <- "B"
 roster$grade[score < y[2] & score >= y[3]] <- "C"
 roster$grade[score < y[3] & score >= y[4]] <- "D"
 roster$grade[score < y[4]] <- "F"
+
 name <- strsplit((roster$Student), " ")
 Lastname <- sapply(name, "[", 2)
 Firstname <- sapply(name, "[", 1)
 roster <- cbind(Firstname,Lastname, roster[,-1])
 roster <- roster[order(Lastname,Firstname),]
+
 roster
 
-# --Section 5.4--
 
 # Listing 5.4 - A switch example
 feelings <- c("sad", "afraid")
@@ -114,6 +118,7 @@ for (i in feelings)
            angry  = "Calm down now"
     )
   )
+
 
 # Listing 5.5 - mystats(): a user-written function for 
 # summary statistics
@@ -132,11 +137,13 @@ mystats <- function(x, parametric=TRUE, print=FALSE) {
   return(result)
 }
 
+
 # trying it out
 set.seed(1234)
 x <- rnorm(500) 
 y <- mystats(x)
 y <- mystats(x, parametric=FALSE, print=TRUE)
+
 
 # mydate: a user-written function using switch
 mydate <- function(type="long") {
@@ -150,12 +157,12 @@ mydate("short")
 mydate()
 mydate("medium")
 
-# --Section 5.6--
 
 # Listing 5.9 - Transposing a dataset
 cars <- mtcars[1:5, 1:4]      
 cars
 t(cars)
+
 
 # Listing 5.10 - Aggregating data
 options(digits=3)
@@ -163,6 +170,7 @@ attach(mtcars)
 aggdata <-aggregate(mtcars, by=list(cyl,gear), 
                     FUN=mean, na.rm=TRUE)
 aggdata
+
 
 # Using the reshape2 package
 library(reshape2)

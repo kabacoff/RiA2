@@ -9,16 +9,11 @@
 par(ask=TRUE)
 opar <- par(no.readonly=TRUE) # make a copy of current settings
 
-# --Section 3.1--
-
 attach(mtcars) # be sure to execute this line
 
 plot(wt, mpg)
 abline(lm(mpg~wt))
 title("Regression of MPG on Weight")
-
-# --Section 3.2--
-
 # Input data for drug example
 dose  <- c(20, 30, 40, 45, 60)
 drugA <- c(16, 20, 27, 40, 60)
@@ -26,14 +21,13 @@ drugB <- c(15, 18, 25, 31, 40)
 
 plot(dose, drugA, type="b")
 
-# --Section 3.3--
-
 opar <- par(no.readonly=TRUE) # make a copy of current settings
 par(lty=2, pch=17)            # change line type and symbol
 plot(dose, drugA, type="b")   # generate a plot
 par(opar)                     # restore the original settings 
 
 plot(dose, drugA, type="b", lty=3, lwd=3, pch=15, cex=2)
+
 
 # choosing colors
 library(RColorBrewer)
@@ -47,6 +41,7 @@ pie(rep(1, n), labels=mycolors, col=mycolors)
 mygrays <- gray(0:n/n)
 pie(rep(1, n), labels=mygrays, col=mygrays)
 
+
 # Listing 3.1 - Using graphical parameters to control graph appearance	
 dose <- c(20, 30, 40, 45, 60)
 drugA <- c(16, 20, 27, 40, 60)
@@ -59,6 +54,7 @@ plot(dose, drugA, type="b", pch=19, lty=2, col="red")
 plot(dose, drugB, type="b", pch=23, lty=6, col="blue", bg="green")
 par(opar)				
 
+
 # Adding text, lines, and symbols
 plot(dose, drugA, type="b",  
      col="red", lty=2, pch=2, lwd=2,
@@ -67,7 +63,6 @@ plot(dose, drugA, type="b",
      xlab="Dosage", ylab="Drug Response",
      xlim=c(0, 60), ylim=c(0, 70))
 
-# --Section 3.4--
 
 # Listing 3.2 - An Example of Custom Axes
 x <- c(1:10)
@@ -120,6 +115,7 @@ text(wt, mpg,
      cex=0.6, pos=4, col="red")
 detach(mtcars)
 
+
 # View font families 
 opar <- par(no.readonly=TRUE)
 par(cex=1.5)
@@ -129,7 +125,6 @@ text(4,4,family="mono","Example of mono-spaced text")
 text(5,5,family="serif","Example of serif text")
 par(opar)
 
-# --Section 3.5--
 
 # Combining graphs
 attach(mtcars)
@@ -166,6 +161,7 @@ hist(wt)
 hist(mpg)
 hist(disp)
 detach(mtcars)
+
 
 # Listing 3.4 - Fine placement of figures in a graph
 opar <- par(no.readonly=TRUE)

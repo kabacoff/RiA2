@@ -16,6 +16,7 @@ cor(age,weight)
 plot(age,weight)
 # q()
 
+
 # Listing 1.2 - An example of commands used to manage the R Workspace. 
 
 setwd("C:/myprojects/project1") # change the path to one of your directories
@@ -27,6 +28,7 @@ hist(x)
 savehistory()
 save.image()
 # q()
+
 
 # Listing 1.3 - Working with a new package
 
