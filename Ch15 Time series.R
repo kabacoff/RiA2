@@ -1,8 +1,9 @@
 #------------------------------------#
 # R in Action (2nd ed): Chapter 15   #
 # Time series                        #
-# requires forecast package          #
-# install.packages("forecast")       #
+# requires forecast, tseries packages#
+# install.packages("forecast",       #
+#                  "tseries")        #
 #------------------------------------#
 
 par(ask=TRUE)
