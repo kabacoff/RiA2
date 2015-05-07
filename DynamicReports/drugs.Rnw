@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\title{Sample Report}
+\author{Robert I. Kabacoff, Ph.D.}
+\usepackage{float}
+\usepackage[top=.5in, bottom=.5in, left=1in, right=1in]{geometry}
+\begin{document}
+\maketitle
+
+<<echo=FALSE, results='hide'>>=
+library(multcomp)
+library(xtable)
+attach(cholesterol)
+@
+
+\section{Results}
+
+Cholesterol reduction was assessed in a study 
+that randomized \Sexpr{nrow(cholesterol)} patients 
+to one of \Sexpr{length(unique(trt))} treatments. 
+Summary statistics are provided in 
+Table \ref{table:descriptives}.
+
+<<echo=FALSE, results='asis'>>=
+descTable <- data.frame("Treatment" = sort(unique(trt)),
+   "N"    = as.vector(table(trt)),
+   "Mean" = tapply(response, list(trt), mean, na.rm=TRUE),
+   "SD"   = tapply(response, list(trt), sd, na.rm=TRUE)
+ )  
+print(xtable(descTable, caption = "Descriptive statistics 
+for each treatment group", label = "table:descriptives"), 
+caption.placement = "top", include.rownames = FALSE)
+@
+
+The analysis of variance is provided in Table \ref{table:anova}.
+
+<<echo=FALSE, results='asis'>>=
+fit <- aov(response ~ trt)
+print(xtable(fit, caption = "Analysis of variance",
+    label = "table:anova"), caption.placement = "top")
+@
+
+\noindent and group differences are plotted in Figure \ref{figure:tukey}.
+
+\begin{figure}[H]\label{figure:tukey}
+\begin{center}
+
+<<echo=FALSE, fig.width=4, fig.height=3>>=
+par(mar=c(3,3,1,3))
+boxplot(response ~ trt, col="lightgrey",xlab="Treatment", ylab="Response")
+@
+
+\caption{Distribution of response times by treatment.}
+\end{center}
+\end{figure}
+\end{document}
