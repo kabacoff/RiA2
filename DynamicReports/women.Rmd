@@ -8,20 +8,20 @@ b <- coefficients(fit)
 ```
 
 Linear regression was used to model the relationship between 
-weights and height in a sample of `r n` women. The equation              
-**weight = `r b[[1]]` +  `r b[[2]]` * height**                
-accounted for `r round(sfit$r.squared,2)`% of the variance 
+weights and height in a sample of `r n` women. The equation
+**weight = `r b[[1]]` +  `r b[[2]]` * height** accounted for `r round(sfit$r.squared,2)`% of the variance 
 in weights. The ANOVA table is given below.
 
 ```{r echo=FALSE, results='asis'}
-library(xtable)                                               
-print(xtable(sfit), type="html")
+library(xtable)
+options(xtable.comment=FALSE)
+print(xtable(sfit), type="html", html.table.attributes="border=0")
 ```
 
 The regression is plotted in the following figure.
 
 ```{r echo=FALSE, fig.width=5, fig.height=4}
 library(ggplot2)
-qplot(height, weight, data=women,
-      geom=c("point", "smooth"), method="lm")
+ggplot(data=women, aes(x=height, y=weight)) +
+       geom_point() + geom_smooth(method="lm")
 ```
