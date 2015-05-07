@@ -6,7 +6,7 @@
 \begin{document}
 \maketitle
 
-<<echo=FALSE, results='hide'>>=
+<<echo=FALSE, results='hide', message=FALSE>>=
 library(multcomp)
 library(xtable)
 attach(cholesterol)
