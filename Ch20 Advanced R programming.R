@@ -1,9 +1,9 @@
-#-------------------------------------------------------------------#
-# R in Action (2nd ed): Chapter 20                                  #
-# Advanced R programming                                            #
-# requires packages ggplot2, reshape, foreach, doParallel           #
-# install.packages(c("ggplot2", "reshape", "foreach", "doParallel"))#
-#-------------------------------------------------------------------#
+#--------------------------------------------------------------------#
+# R in Action (2nd ed): Chapter 20                                   #
+# Advanced R programming                                             #
+# requires packages ggplot2, reshape2, foreach, doParallel           #
+# install.packages(c("ggplot2", "reshap2e", "foreach", "doParallel"))#
+#--------------------------------------------------------------------#
 
 # Atomic vectors
 passed <- c(TRUE, TRUE, FALSE, TRUE)
