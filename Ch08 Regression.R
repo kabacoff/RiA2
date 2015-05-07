@@ -281,7 +281,7 @@ relweights <- function(fit,...){
            sub=paste("Total R-Square=", round(rsquare, digits=3)),
            ...)
   return(import)
-  
+  }
   
   # Listing 8.17 - Applying the relweights function
   states <- as.data.frame(state.x77[,c("Murder", "Population",

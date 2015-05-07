@@ -151,7 +151,7 @@ outliers
 
 # Listing 9.10 - Robust one-way MANOVA
 library(rrcov)
-Wilks.test(y,shelf, method="mcd")
+Wilks.test(y,shelf, method="mcd")  # this can take a while
 
 
 # Listing 9.11 - A regression approach to the Anova problem

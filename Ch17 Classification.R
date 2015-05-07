@@ -97,7 +97,7 @@ svm.perf <- table(na.omit(df.validate)$class,
 svm.perf
 
 
-# Listing 17.7 Tuning an RBF support vector machine
+# Listing 17.7 Tuning an RBF support vector machine (this can take a while)
 set.seed(1234)
 tuned <- tune.svm(class~., data=df.train,
                   gamma=10^(-6:1),
