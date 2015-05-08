@@ -1,13 +1,12 @@
 # R in Action
 
-Source code for R in Action 2nd Edition
+Source code for [R in Action 2nd Edition](http://www.manning.com/kabacoff2/?a_aid=RiA2ed&a_bid=5c2b1e1d)
 2015 - Copyright: Manning Publications. All rights reserved.
 
 This directory contains the source code for chapters 1 through 22 and the bonus chapter.
 
 Many chapters require the installation of contributed packages.
 These are indicated in the header of the corresponding code file.
-
 For example, the code in chapter 3 requires that you have the
 Hmisc package installed. If you don't have this package installed, 
 execute the command install.packages("Hmisc") while connected to the internet.
