@@ -5,6 +5,9 @@ Source code for [R in Action 2nd Edition](http://www.manning.com/kabacoff2/?a_ai
 
 This directory contains the source code for chapters 1 through 22 and the bonus chapter.
 
+Although I've tried to limit the errors appearing in the book, some have crept in and are listed
+in the [Errata](./R_in_Action_2nd_Edition-Errata.pdf).
+
 Many chapters require the installation of contributed packages.
 These are indicated in the header of the corresponding code file.
 For example, the code in chapter 3 requires that you have the
