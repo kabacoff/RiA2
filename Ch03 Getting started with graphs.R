@@ -99,7 +99,7 @@ lines(dose, drugB, type="b",
 abline(h=c(30), lwd=1.5, lty=2, col="gray")
 library(Hmisc)
 minor.tick(nx=3, ny=3, tick.ratio=0.5)
-legend("topleft", inset=.05, title="Drug Type", c("A","B")
+legend("topleft", inset=.05, title="Drug Type", c("A","B"),
        lty=c(1, 2), pch=c(15, 17), col=c("red", "blue"))
 par(opar)
 
@@ -166,12 +166,12 @@ detach(mtcars)
 # Listing 3.4 - Fine placement of figures in a graph
 opar <- par(no.readonly=TRUE)
 par(fig=c(0, 0.8, 0, 0.8))
-plot(mtcars$wt, mtcars$mpg,
+plot(mtcars$mpg, mtcars$wt,
      xlab="Miles Per Gallon",
      ylab="Car Weight")
 par(fig=c(0, 0.8, 0.55, 1), new=TRUE)
-boxplot(mtcars$wt, horizontal=TRUE, axes=FALSE)
+boxplot(mtcars$mpg, horizontal=TRUE, axes=FALSE)
 par(fig=c(0.65, 1, 0, 0.8), new=TRUE)
-boxplot(mtcars$mpg, axes=FALSE)
+boxplot(mtcars$wt, axes=FALSE)
 mtext("Enhanced Scatterplot", side=3, outer=TRUE, line=-3)
 par(opar)
