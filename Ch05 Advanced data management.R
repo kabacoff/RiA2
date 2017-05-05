@@ -102,7 +102,7 @@ name <- strsplit((roster$Student), " ")
 Lastname <- sapply(name, "[", 2)
 Firstname <- sapply(name, "[", 1)
 roster <- cbind(Firstname,Lastname, roster[,-1])
-roster <- roster[order(Lastname,Firstname),]
+roster<- roster[order(Firstname,Lastname),]
 
 roster
 
